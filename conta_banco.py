@@ -51,6 +51,10 @@ class Conta:
         """transfere um valor da conta A para a conta B"""
         self.__saldo -= valor
         destino.__saldo += valor##adiciona o valor a conta de destino
+        
+    @property
+    def valor_total(self):##Por causa do decorador não é um metodo, mas uma PROPRIEDADE
+        return self.__saldo + self.__limite
 
 
 
@@ -65,9 +69,12 @@ print(cliente1.depositar(500))
 cliente1.transferir(100, cliente2)
 print(cliente2.saldo_c())
 
-soma = cliente1.saldo + cliente2.saldo ##por causa dos decoradores usamos cliente.saldo no lugar de cliente.saldo()
+soma = cliente1.saldo + cliente2.saldo ## É uma propriedade por causa dos decoradores usamos cliente.saldo no lugar de cliente.saldo()
 print(soma)
 
 print(cliente1.__dict__)#dicionario dos dados 
 cliente1.limite = 5000##alterar o limite do cliente1 pelo decorador @limite.setter
 print(cliente1.__dict__)
+
+print(cliente1.valor_total)#NAO É UM METODO É UMA PROPRIEDADE)
+print(cliente2.valor_total)
