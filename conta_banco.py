@@ -13,6 +13,22 @@ class Conta:
         self.__conta = Conta.contador
         Conta.contador += 1
         
+    @property#usando o decorador para acessar (GET) uma variável privada fora da classe
+    def tirular(self):
+        return self.__titular
+    
+    @property
+    def saldo_c(self):
+        return self.__saldo
+    
+    @property
+    def limite_c(self):
+        return self.__limite
+    
+    @limite_c.setter#usando o decorador para alterar (SET) uma variável privada fora da classe
+    def limite_c(self, novo_limite):
+        self.__limite = novo_limite    
+    
     def titular(self):
         return f'Cliente: {self.__nome} {self.__sobrenome}, Conta: {self.__conta}'
     
