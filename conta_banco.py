@@ -68,5 +68,6 @@ print(cliente2.saldo_c())
 soma = cliente1.saldo + cliente2.saldo ##por causa dos decoradores usamos cliente.saldo no lugar de cliente.saldo()
 print(soma)
 
+print(cliente1.__dict__)#dicionario dos dados 
 cliente1.limite = 5000##alterar o limite do cliente1 pelo decorador @limite.setter
-print(cliente1.limite_c())
+print(cliente1.__dict__)
